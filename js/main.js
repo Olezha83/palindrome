@@ -7,7 +7,13 @@ const [inputText, checkButton, positiveAnswer, negativeAnswer] = [
 
 function isPalindrome() {
   const checkResult =
-    inputText.value === inputText.value.split('').reverse().join('')
+    inputText.value.toLowerCase().replaceAll(' ', '') ===
+    inputText.value
+      .toLowerCase()
+      .replaceAll(' ', '')
+      .split('')
+      .reverse()
+      .join('')
 
   checkResult
     ? positiveAnswer.classList.add('answer_visible')
