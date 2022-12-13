@@ -5,4 +5,4 @@ Through testing, I realized that this only works fine for checking a single word
 I realized, that in order to check a phrase or a sentence it is also necessary to remove spaces and punctuation.
 That's what I did in second and third commit.
 
-Nice experience!
+[Here](https://github.com/Olezha83/react-palindrome) is the React analogue of this app
