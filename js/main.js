@@ -1,13 +1,13 @@
-const [inputText, checkButton, positiveAnswer, negativeAnswer] = [
+const [form, inputText, positiveAnswer, negativeAnswer] = [
+  'form',
   'input_text',
-  'check_button',
   'positive_answer',
   'negative_answer',
 ].map((id) => document.getElementById(id))
 
 function isPalindrome() {
-  const removedSymbols =
-    /[\u0020-\u0022\u0027-\u0029\u002C-\u002E\u003A\u003B\u003F\u00AB\u00BB\u2013\u2014\u2018\u2019\u201C\u201D]/g
+  const removedSymbols = /[@#$^&№%(){}[\]<>|/\\~\-—,.;:`'"!?+–*=_…\s]/g
+
   const checkResult =
     inputText.value.toLowerCase().replaceAll(removedSymbols, '') ===
     inputText.value
@@ -29,6 +29,8 @@ inputText.addEventListener('focus', (event) => {
   negativeAnswer.classList.remove('answer_visible')
 })
 
-checkButton.addEventListener('click', () => {
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+  inputText.blur()
   inputText.value ? isPalindrome() : inputText.classList.add('error')
 })
